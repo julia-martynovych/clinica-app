@@ -1,6 +1,7 @@
 :root {
     --yellow-color-light: #F8CE51;
     --yellow-color-dark: #D3AC37;
+    --yellow-color-hover:#F8E4AC;
     --main-color-black: #34393C;
     --color-placeholders: #E5EFEE;
     --color-white: #FFFFFF;
@@ -83,6 +84,9 @@ color: var(--main-color-black);
     padding-left: 20px;
     padding-right: 20px;
 }
+.button--yellow—light:hover{
+    background-color: var(--yellow-color-hover);
+}
 .button--yellow—stroke{
     background-color: var(--color-white);
     color:var(--main-color-black);
@@ -91,6 +95,13 @@ color: var(--main-color-black);
     height: 30px;
     padding-left: 20px;
     padding-right: 20px;
+}
+.button--yellow—stroke:hover{
+    border: solid 3px var(--yellow-color-hover);
+}
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
 }
 /*Search Form*/
 .search-form{
