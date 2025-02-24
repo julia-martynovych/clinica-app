@@ -1,0 +1,19 @@
+:root {
+    --yellow-color-light: #F8CE51;
+    --yellow-color-dark: #D3AC37;
+    --main-color-black: #34393C;
+    --color-placeholders: #E5EFEE;
+    --color-white: #FFFFFF;
+    --font-size-h1: 64px;
+    --font-size-p: 16px;
+    --font-family-h1: "Irish Grover";
+    --font-family-p: "Jost";
+}
+
+h1{
+    font-family: var(--font-family-h1);
+
+}
+p{
+font-family: var(--font-family-p);
+}
