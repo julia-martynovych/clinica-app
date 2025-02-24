@@ -9,11 +9,59 @@
     --font-family-h1: "Irish Grover";
     --font-family-p: "Jost";
 }
-
+/* *{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+} */
+.container--nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+.nav--logo{
+    width: 30%;
+}
+.nav--title{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* justify-content:center; */
+    
+}
+.nav--login{
+    width: 20%;
+}
 h1{
     font-family: var(--font-family-h1);
+    font-size: var(--font-size-h1);
+    color:var(--main-color-black)
 
+}
+.paw{
+    color:var(--yellow-color-dark);
+   
 }
 p{
 font-family: var(--font-family-p);
+font-size: var(--font-family-p);
+color: var(--main-color-black);
+}
+
+.img--logo{
+    height: 200px;
+    width: 200px;
+    /* justify-content:flex-start; */
+}
+
+.button--yellow—light{
+    background-color: var(--yellow-color-light);
+    color:var(--main-color-black);
+    border-radius: 5px;
+}
+.button--yellow—stroke{
+    background-color: var(--color-white);
+    color:var(--main-color-black);
+    border: solid 3px var(--yellow-color-dark);
+    border-radius: 5px;
 }
