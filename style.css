@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items:center;
     }
 .nav--logo{
     width: 25%;
@@ -35,12 +36,21 @@
 .nav--login{
     width: 25%;
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+    
+
    
 }
 #nav--login--user {
-   height: 50px;
+    font-size: 30px;
+    margin-right: 16px;
   
+}
+#nav--login--button1, #nav--login--button2{
+margin-right: 16px;
 }
 h1{
     font-family: var(--font-family-h1);
@@ -81,4 +91,17 @@ color: var(--main-color-black);
     height: 30px;
     padding-left: 20px;
     padding-right: 20px;
+}
+/*Search Form*/
+.search-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table--database{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36px;
 }
