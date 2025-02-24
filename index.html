@@ -32,57 +32,59 @@
         </div>
     </nav>
     <main>
-        <section class="search-form">
+    <div class="search-form">
         <div>
             <p>Buscar patitas</p>
         </div>
-        <div>
-            <section class="filters">
-                <div class="filter">
-                    <label for="id">Id:</label>
-                    <input type="number" class="input-field" placeholder="Id">
-                </div>
-        
-                <div class="filter">
-                    <label for="species">Especie:</label>
-                    <select id="species" name="species">
-                        <option value="" disabled selected>Elige...</option>
-                        <option value="cat">Gato </option>
-                        <option value="dog">Perro</option>
-                    </select> 
-                </div>
-                <div class="filter">
-                    <label for="birthday">Fecha de nacimiento:</label>
-                    <input type="date"  class="input-field" placeholder="date">
-                </div>
-                <div class="filter">
-                    <label for="title">Ultima visita:</label>
-                    <input type="date"  class="input-field" placeholder="date">
-                </div>
-                <div class="filter">
-                    <label for="title">Nombre:</label>
-                    <input type="text" class="input-field" placeholder="Nombre">
-                </div>
-                <div class="filter">
-                    <label for="gender">Sexo:</label>
-                    <select id="gender" name="gender">
-                        <option value="" disabled selected>Elige...</option>
-                        <option value="macho">Macho </option>
-                        <option value="hembra">Hembra</option>
-                    </select> 
-                </div>
-                <div class="filter">
-                    <label for="title">Propietario:</label>
-                    <input type="text" class="input-field" placeholder="Propietario">
-                </div>
-        
-                <div class="filter">
-                    <button id="searchButton" type="submit" class="button--yellow—light"onclick="searchPets()">Buscar</button>
-                </div>
-            </section>
-            
-        </div>
+        <section class="filters">
+            <div class="filter">
+                <label for="id">Id:</label>
+                <input type="number" class="input-field" placeholder="Id">
+            </div>
+    
+            <div class="filter">
+                <label for="species">Especie:</label>
+                <select id="species" name="species">
+                    <option value="" disabled selected>Elige...</option>
+                    <option value="cat">Gato </option>
+                    <option value="dog">Perro</option>
+                </select>
+            </div>
+    
+            <div class="filter">
+                <label for="birthday">Fecha de nacimiento:</label>
+                <input type="date" class="input-field" placeholder="date">
+            </div>
+    
+            <div class="filter">
+                <label for="lastVisit">Ultima visita:</label>
+                <input type="date" class="input-field" placeholder="date">
+            </div>
+    
+            <div class="filter">
+                <label for="name">Nombre:</label>
+                <input type="text" class="input-field" placeholder="Nombre">
+            </div>
+    
+            <div class="filter">
+                <label for="gender">Sexo:</label>
+                <select id="gender" name="gender">
+                    <option value="" disabled selected>Elige...</option>
+                    <option value="macho">Macho </option>
+                    <option value="hembra">Hembra</option>
+                </select>
+            </div>
+    
+            <div class="filter">
+                <label for="owner">Propietario:</label>
+                <input type="text" class="input-field" placeholder="Propietario">
+            </div>
+    
+            <div class="filter-button">
+                <button id="searchButton" type="submit" class="button--yellow—light" onclick="searchPets()">Buscar</button>
+            </div>
         </section>
+    </div>
         <section class="table--database">
             <div>
                 <p>Base de datos de patitas</p>
