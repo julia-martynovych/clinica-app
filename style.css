@@ -116,3 +116,18 @@ button:hover{
     align-items: center;
     margin-top: 36px;
 }
+
+#pets-table{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+#pets-table th, #pets-table td{
+    padding: 16px;
+    border-bottom: 1px solid var(--yellow-color-hover);
+
+}
+#pets-table th {
+    font-weight: bold;
+}
