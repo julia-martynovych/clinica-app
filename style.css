@@ -15,6 +15,7 @@
     padding: 0;
     box-shadow: none;
 }
+/* nav */
 .container--nav{
     margin-top: 24px;
     display: flex;
@@ -75,6 +76,7 @@ color: var(--main-color-black);
     /* justify-content:flex-start; */
 }
 
+/* Buttons */
 .button--yellow—light{
     background-color: var(--yellow-color-light);
     color:var(--main-color-black);
@@ -103,6 +105,7 @@ button:hover{
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
 }
+
 /*Search Form*/
 .search-form{
     display: flex;
@@ -117,6 +120,7 @@ button:hover{
     margin-top: 36px;
 }
 
+/* Table */
 #pets-table{
     width: 100%;
     overflow: hidden;
