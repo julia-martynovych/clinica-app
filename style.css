@@ -9,28 +9,38 @@
     --font-family-h1: "Irish Grover";
     --font-family-p: "Jost";
 }
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-shadow: none;
-} */
+}
 .container--nav{
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     }
 .nav--logo{
-    width: 30%;
+    width: 25%;
 }
 .nav--title{
     display: flex;
     flex-direction: column;
     width: 50%;
-    /* justify-content:center; */
+    align-items: center;
+    text-align: center;
+
     
 }
 .nav--login{
-    width: 20%;
+    width: 25%;
+    display: flex;
+    align-items: flex-start;
+   
+}
+#nav--login--user {
+   height: 50px;
+  
 }
 h1{
     font-family: var(--font-family-h1);
@@ -49,8 +59,8 @@ color: var(--main-color-black);
 }
 
 .img--logo{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: auto;
     /* justify-content:flex-start; */
 }
 
@@ -58,10 +68,17 @@ color: var(--main-color-black);
     background-color: var(--yellow-color-light);
     color:var(--main-color-black);
     border-radius: 5px;
+    border: 0;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .button--yellow—stroke{
     background-color: var(--color-white);
     color:var(--main-color-black);
     border: solid 3px var(--yellow-color-dark);
     border-radius: 5px;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
