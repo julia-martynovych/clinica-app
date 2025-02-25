@@ -114,6 +114,12 @@ async function addPet() {
         console.log("Error:", error);
     }
 }
+function formatDate(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("es-ES");
+}
+
 
 function printPets(pets) {
     table.innerHTML = tableHead;
@@ -130,10 +136,10 @@ function printPets(pets) {
             <td>${pet.id}</td>
             <td>${pet.name}</td>
            <td>${pet.species === "Gato" ? '<i class="fa-solid fa-cat"></i>' : '<i class="fa-solid fa-dog"></i>'}</td>
-            <td>${pet.date_of_birth}</td>
+            <td>${formatDate(pet.date_of_birth)}</td>
             <td>${pet.sex}</td>
             <td>${pet.owner}</td>
-            <td>${pet.date_of_last_visit}</td>
+            <td>${formatDate(pet.date_of_last_visit)}</td>
             <td><button id="update-btn" class="update-btn"><i class="fa-solid fa-arrows-rotate"></i></button></td>
             <td><button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="delete-btn" class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
@@ -176,77 +182,77 @@ function printPets(pets) {
 //   }
 // }
 // Cargar una película en el formulario para editarla
-async function editPet(id) {
-  const pet = await fetch(`${API_URL}/${id}`);
-  if (pet) { 
-    document.getElementById("species_form").value = "pet.species";
-    document.getElementById("date_of_birth_form").value = "pet.date_of_birth";
-    document.getElementById("date_of_last_visit_form").value = "pet.date_of_last_visit";
-    document.getElementById("name_form").value = "pet.name";
-    document.getElementById("sex_form").value = "pet.sex";
-      document.getElementById("owner_form").value = "pet.owner";
+// async function editPet(id) {
+//   const pet = await fetch(`${API_URL}/${id}`);
+//   if (pet) { 
+//     document.getElementById("species_form").value = "pet.species";
+//     document.getElementById("date_of_birth_form").value = "pet.date_of_birth";
+//     document.getElementById("date_of_last_visit_form").value = "pet.date_of_last_visit";
+//     document.getElementById("name_form").value = "pet.name";
+//     document.getElementById("sex_form").value = "pet.sex";
+//       document.getElementById("owner_form").value = "pet.owner";
       
-    currentFilmId = id; // Cambiar a modo edición
-    document.getElementById("submitBtn").textContent = "Guardar Cambios ✔";
-    document.getElementById("cancelEditBtn").style.display = "inline";
-    document.getElementById("formTitle").textContent = "Editar Película";
-  }
-}
+//     currentFilmId = id; // Cambiar a modo edición
+//     document.getElementById("submitBtn").textContent = "Guardar Cambios ✔";
+//     document.getElementById("cancelEditBtn").style.display = "inline";
+//     document.getElementById("formTitle").textContent = "Editar Película";
+//   }
+// }
 
-// Reiniciar el formulario a su estado por defecto (modo creación)
-function resetForm() {
-  document.getElementById("formPost").reset();
-  currentFilmId = null;
-  document.getElementById("submitBtn").textContent = "Añadir :film_frames:";
-  document.getElementById("cancelEditBtn").style.display = "none";
-  document.getElementById("formTitle").textContent = "Añadir :film_frames:";
-}
+// // Reiniciar el formulario a su estado por defecto (modo creación)
+// function resetForm() {
+//   document.getElementById("formPost").reset();
+//   currentFilmId = null;
+//   document.getElementById("submitBtn").textContent = "Añadir :film_frames:";
+//   document.getElementById("cancelEditBtn").style.display = "none";
+//   document.getElementById("formTitle").textContent = "Añadir :film_frames:";
+// }
 
-// Cancelar la edición y restablecer el formulario
-function cancelEdit() {
-  resetForm();
-}
-// Variable global para controlar el modo: null = creación, o contiene el id en modo edición.
-let currentFilmId = null;
+// // Cancelar la edición y restablecer el formulario
+// function cancelEdit() {
+//   resetForm();
+// }
+// // Variable global para controlar el modo: null = creación, o contiene el id en modo edición.
+// let currentFilmId = null;
 
-// Asignamos el evento de submit al formulario
-document.getElementById("formPost").addEventListener("submit", handleFormSubmit);
-// Con esta funcion manejamos el formulario 
-async function handleFormSubmit(event) {
-  event.preventDefault();
-  // Si currentFilmId tiene valor, estamos en modo edición, sino en modo creación.
-  if (currentFilmId) {
-    await updateFilm(currentFilmId);
-  } else {
-    await createFilm();
-  }
-  printFilms();
-  resetForm();
-} 
+// // Asignamos el evento de submit al formulario
+// document.getElementById("formPost").addEventListener("submit", handleFormSubmit);
+// // Con esta funcion manejamos el formulario 
+// async function handleFormSubmit(event) {
+//   event.preventDefault();
+//   // Si currentFilmId tiene valor, estamos en modo edición, sino en modo creación.
+//   if (currentFilmId) {
+//     await updateFilm(currentFilmId);
+//   } else {
+//     await createFilm();
+//   }
+//   printFilms();
+//   resetForm();
+// } 
 
-// UPDATE: Actualizar una película (PUT)
-async function updateFilm(id) {
-  // const Id = document.getElementById("filmId").value;
-  const Title = document.getElementById("filmTitle").value;
-  const Year = document.getElementById("filmYear").value;
-  const Director = document.getElementById("filmDirector").value;
-  const data = { Title, Year, Director };
+// // UPDATE: Actualizar una película (PUT)
+// async function updateFilm(id) {
+//   // const Id = document.getElementById("filmId").value;
+//   const Title = document.getElementById("filmTitle").value;
+//   const Year = document.getElementById("filmYear").value;
+//   const Director = document.getElementById("filmDirector").value;
+//   const data = { Title, Year, Director };
 
-  try {
-    const response = await fetch(`${API_URL}/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
+//   try {
+//     const response = await fetch(`${API_URL}/${id}`, {
+//       method: "PUT",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(data)
+//     });
    
-    const result = await response.json();
-    console.log("Película actualizada:", result);
-    alert("Película actualizada correctamente");
-  } catch (error) {
-    console.error("Error al actualizar la película:", error);
-    alert("Hubo un error al actualizar la película");
-  }
-}
+//     const result = await response.json();
+//     console.log("Película actualizada:", result);
+//     alert("Película actualizada correctamente");
+//   } catch (error) {
+//     console.error("Error al actualizar la película:", error);
+//     alert("Hubo un error al actualizar la película");
+//   }
+// }
 
 const openFormBtn = document.getElementById("openFormBtn");
 const formPost = document.getElementById("formPost");

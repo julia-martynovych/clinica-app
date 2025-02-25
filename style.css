@@ -4,6 +4,8 @@
     --yellow-color-hover:#F8E4AC;
     --main-color-black: #34393C;
     --color-placeholders: #E5EFEE;
+    --color-dog: #40C9A2;
+    --color-cat: #2F9C95;
     --color-white: #FFFFFF;
     --font-size-h1: 64px;
     --font-size-p: 16px;
@@ -216,12 +218,12 @@ height: 20px;
 }
 
 .fa-cat {
-    color: #2F9C95;
+    color: var(--color-cat);
     font-size: 24px;
 }
 
 .fa-dog {
-    color: #40C9A2;
+    color: var(--color-dog);
     font-size: 24px;
 }
 
