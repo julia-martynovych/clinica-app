@@ -114,9 +114,9 @@
             <div id="formPost" class="modal">
                 <div class="modal-content">
                     <span id="closeFormBtn" class="close">&times;</span>
-                    <h2>Crear nuevo animal</h2>
-                    <section class="filters">
-                        <div class="filter">
+                    <h2 class="create-form-title">Crear nuevas patitas</h2>
+                    <section class="create-form-main">
+                        <div class="create-form">
                             <label for="species_form">Especie:</label>
                             <select id="species_form" name="species">
                                 <option value="" disabled selected>Elige...</option>
@@ -125,22 +125,22 @@
                             </select>
                         </div>
                 
-                        <div class="filter">
+                        <div class="create-form">
                             <label for="birthday">Fecha de nacimiento:</label>
                             <input type="date" id="date_of_birth_form" class="input-field" placeholder="date">
                         </div>
                 
-                        <div class="filter">
+                        <div class="create-form">
                             <label for="lastVisit">Ultima visita:</label>
                             <input type="date" id="date_of_last_visit_form" class="input-field" placeholder="date">
                         </div>
                 
-                        <div class="filter">
+                        <div class="create-form">
                             <label for="name">Nombre:</label>
                             <input type="text" id="name_form" class="input-field" placeholder="Nombre">
                         </div>
                 
-                        <div class="filter">
+                        <div class="create-form">
                             <label for="sex_form">Sexo:</label>
                             <select id="sex_form" name="sex">
                                 <option value="" disabled selected>Elige...</option>
@@ -149,13 +149,13 @@
                             </select>
                         </div>
                 
-                        <div class="filter">
+                        <div class="create-form">
                             <label for="owner">Propietario:</label>
                             <input type="text" id="owner_form" class="input-field" placeholder="Propietario">
                         </div>
                 
-                        <div class="filter-button">
-                            <button type="submit" class="button--yellow-light" onclick="searchPets()">Añadir Patitas</button>
+                        <div class="create-form-button">
+                            <button class="button--yellow—light" onclick="addPet()">Añadir Patitas</button>
                         </div>
                     </section>
                 </div>

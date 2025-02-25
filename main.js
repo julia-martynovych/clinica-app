@@ -60,12 +60,6 @@ async function addPet(pet) {
         
         let pets = await getAllPets();
 
-        let petExists = pets.some(p => p.name === pet.name && p.date_of_birth === pet.date_of_birth);
-        if (petExists) {
-            console.log("Esas patitas ya existen");
-            return;
-        }
-
         let response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -131,3 +125,4 @@ window.onclick = function(event) {
         formPost.style.display = "none";
     }
 }
+
