@@ -110,9 +110,57 @@
             <button class="button--yellow—light" onclick="printAllPets()">Cargar todos</button>
             <button class="button--yellow—stroke" >Crear nuevo</button>
             </div>
+            <div id="formPost">
+                <section class="filters">
+                    <div class="filter">
+                            <label for="id">Id:</label>
+                            <input type="number" id="id_form" class="input-field" placeholder="Id">
+                    </div>
+                
+                        <div class="filter">
+                            <label for="species_form">Especie:</label>
+                            <select id="species_form" name="species">
+                                <option value="" disabled selected>Elige...</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Perro">Perro</option>
+                            </select>
+                        </div>
+                
+                        <div class="filter">
+                            <label for="birthday">Fecha de nacimiento:</label>
+                            <input type="date" id="date_of_birth_form" class="input-field" placeholder="date">
+                        </div>
+                
+                        <div class="filter">
+                            <label for="lastVisit">Ultima visita:</label>
+                            <input type="date" id="date_of_last_visit_form" class="input-field" placeholder="date">
+                        </div>
+                
+                        <div class="filter">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name_form" class="input-field" placeholder="Nombre">
+                        </div>
+                
+                        <div class="filter">
+                            <label for="sex_form">Sexo:</label>
+                            <select id="sex_form" name="sex">
+                                <option value="" disabled selected>Elige...</option>
+                                <option value="Macho">Macho</option>
+                                <option value="Hembra">Hembra</option>
+                            </select>
+                        </div>
+                
+                        <div class="filter">
+                            <label for="owner">Propietario:</label>
+                            <input type="text" id="owner_form" class="input-field" placeholder="Propietario">
+                        </div>
+                
+                        <div class="filter-button">
+                            <button type="submit" class="button--yellow—light" onclick="searchPets()">Añadir Patitas</button>
+                        </div>
+                    </section>
+            </div>
         </section>
-        
-
     </main>
     <script src="./main.js"></script>
 </body>
