@@ -68,7 +68,7 @@ function printPets(pets) {
         row.innerHTML = `
             <td>${pet.id}</td>
             <td>${pet.name}</td>
-            <td>${pet.species}</td>
+           <td>${pet.species === "Gato" ? '<i class="fa-solid fa-cat"></i>' : '<i class="fa-solid fa-dog"></i>'}</td>
             <td>${pet.date_of_birth}</td>
             <td>${pet.sex}</td>
             <td>${pet.owner}</td>
