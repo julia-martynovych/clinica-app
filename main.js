@@ -66,10 +66,10 @@ function printPets(pets) {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${pet.id}</td>
-            <td>${pet.species}</td>
             <td>${pet.name}</td>
-            <td>${pet.sex}</td>
+            <td>${pet.species}</td>
             <td>${pet.date_of_birth}</td>
+            <td>${pet.sex}</td>
             <td>${pet.owner}</td>
             <td>${pet.date_of_last_visit}</td>
             <td><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
