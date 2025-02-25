@@ -115,10 +115,6 @@ async function addPet() {
     }
 }
 
-// document.getElementById("addPetButton").addEventListener("click", addPet);
-
-
-
 function printPets(pets) {
     table.innerHTML = tableHead;
 
@@ -153,6 +149,22 @@ function printPets(pets) {
     
 }
 
+// UPDATE: metod PUT
+
+async function updatePet(pet) {  
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(pet)
+        });
+
+        if (!response.ok) throw new Error(`Error updating pet: ${response.status}`);
+
+        console.log(`Pet ${pet.id} updated successfully`);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
 const openFormBtn = document.getElementById("openFormBtn");
 const formPost = document.getElementById("formPost");
 const closeFormBtn = document.getElementById("closeFormBtn");
