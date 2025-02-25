@@ -75,17 +75,16 @@ function printPets(pets) {
             <td>${pet.sex}</td>
             <td>${pet.owner}</td>
             <td>${formatDate(pet.date_of_last_visit)}</td>
-            <td><button id="update-btn" class="update-btn"><i class="fa-solid fa-arrows-rotate"></i></button></td>
+            <td><button data-id="${pet.id}" class="update-btn"><i class="fa-solid fa-arrows-rotate"></i></button></td>
             <td><button class="edit-btn" data-id="${pet.id}"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="delete-btn" class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
         `;
         row.querySelector(".delete-btn").addEventListener("click", (event) => deletePet(pet.id, event));
         row.querySelector(".edit-btn").addEventListener("click", (event) => editPet(pet.id, event));
-
+        row.querySelector(".update-btn").addEventListener("click", (event) => updateLastVisitDate(pet.id, event)); // Добавляем обработчик для кнопки обновления
         table.appendChild(row);
     });
 }
-
 
 function clearForm() {
     document.getElementById("species_form").value = "";
@@ -95,7 +94,6 @@ function clearForm() {
     document.getElementById("sex_form").value = "";
     document.getElementById("owner_form").value = "";
 }
-
 
 document.addEventListener("click", async function (event) {
     const editBtn = event.target.closest(".edit-btn");
@@ -128,7 +126,6 @@ document.addEventListener("click", async function (event) {
     }
 });
 
-
 openFormBtn.onclick = function () {
     clearForm(); 
     formPost.style.display = "block";
@@ -157,7 +154,6 @@ formSubmitBtn.addEventListener("click", async function (event) {
     try {
         let response;
         if (mode === "edit" && petId) {
-            
             response = await fetch(`${API_URL}/${petId}`, {
                 method: "PUT",
                 headers: {
@@ -166,7 +162,6 @@ formSubmitBtn.addEventListener("click", async function (event) {
                 body: JSON.stringify(updatedPet)
             });
         } else if (mode === "create") {
-         
             response = await fetch(API_URL, {
                 method: "POST",
                 headers: {
@@ -186,7 +181,6 @@ formSubmitBtn.addEventListener("click", async function (event) {
         formPost.removeAttribute("data-id");
         formPost.removeAttribute("data-mode");
 
-        
         const updatedPets = await fetch(API_URL).then(res => res.json());
         printPets(updatedPets);
 
@@ -212,7 +206,31 @@ async function deletePet(id, event) {
     }
 }
 
+// UPDATE: Update last visit date
+async function updateLastVisitDate(petId, event) {
+    try {
+        const today = new Date().toISOString().split("T")[0]; 
 
+        
+        const response = await fetch(`${API_URL}/${petId}`, {
+            method: "PATCH", 
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ date_of_last_visit: today })
+        });
+
+        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+
+        
+        const row = event.target.closest("tr");
+        row.querySelector("td:nth-child(7)").textContent = formatDate(today); 
+
+        alert("Fecha de última visita actualizada correctamente");
+    } catch (error) {
+        console.log("Error al actualizar la fecha de última visita:", error);
+    }
+}
+
+// Close form when clicking outside
 document.addEventListener("click", function (event) {
     const formPost = document.getElementById("formPost");
     if (event.target === formPost) { 
