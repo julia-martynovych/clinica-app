@@ -73,9 +73,6 @@
       "date_of_last_visit": "2024-12-01"
     },
     {
-      "id": "5a18"
-    },
-    {
       "id": "fa63"
     },
     {
@@ -86,6 +83,15 @@
       "name": "Cora",
       "sex": "Hembra",
       "owner": "Noemi Casaprima"
+    },
+    {
+      "id": "5c33",
+      "species": "Gato",
+      "date_of_birth": "2025-02-02",
+      "date_of_last_visit": "2025-02-24",
+      "name": "Nochka",
+      "sex": "Hembra",
+      "owner": "Julia Martynovych"
     }
   ]
 }

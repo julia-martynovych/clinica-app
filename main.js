@@ -142,7 +142,7 @@ function printPets(pets) {
             <td><button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="delete-btn" class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
         `;
-        row.querySelector(".delete-btn").addEventListener("click", (event) => deleteFilm(pet.id, event));
+        row.querySelector(".delete-btn").addEventListener("click", (event) => deletePet(pet.id, event));
         row.querySelector(".edit-btn").addEventListener("click", () => {
             editPet = pet;
             
@@ -172,3 +172,20 @@ window.onclick = function(event) {
     }
 }
 
+// DELETE: metod DELETE
+
+async function deletePet(id, event) {  
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE",
+        });
+
+        if (!response.ok) throw new Error(`Error deleting film: ${response.status}`);
+      
+        event.target.closest("tr").remove();
+
+        alert(`Las patitas ${id} se han eliminado con éxito`);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
