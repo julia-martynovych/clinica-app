@@ -108,15 +108,14 @@
             </div>
             <div>
             <button class="button--yellow—light" onclick="printAllPets()">Cargar todos</button>
-            <button class="button--yellow—stroke" >Crear nuevo</button>
+            <button class="button--yellow—stroke" id="openFormBtn">Crear nuevo</button>
             </div>
-            <div id="formPost">
-                <section class="filters">
-                    <div class="filter">
-                            <label for="id">Id:</label>
-                            <input type="number" id="id_form" class="input-field" placeholder="Id">
-                    </div>
-                
+            </section>
+            <div id="formPost" class="modal">
+                <div class="modal-content">
+                    <span id="closeFormBtn" class="close">&times;</span>
+                    <h2>Crear nuevo animal</h2>
+                    <section class="filters">
                         <div class="filter">
                             <label for="species_form">Especie:</label>
                             <select id="species_form" name="species">
@@ -156,11 +155,12 @@
                         </div>
                 
                         <div class="filter-button">
-                            <button type="submit" class="button--yellow—light" onclick="searchPets()">Añadir Patitas</button>
+                            <button type="submit" class="button--yellow-light" onclick="searchPets()">Añadir Patitas</button>
                         </div>
                     </section>
+                </div>
             </div>
-        </section>
+        
     </main>
     <script src="./main.js"></script>
 </body>

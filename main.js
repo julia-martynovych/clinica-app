@@ -112,3 +112,22 @@ function printPets(pets) {
    
     
 }
+
+const openFormBtn = document.getElementById("openFormBtn");
+const formPost = document.getElementById("formPost");
+const closeFormBtn = document.getElementById("closeFormBtn");
+
+
+openFormBtn.onclick = function() {
+    formPost.style.display = "block";
+}
+
+
+closeFormBtn.onclick = function() {
+    formPost.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target === formPost) {
+        formPost.style.display = "none";
+    }
+}
