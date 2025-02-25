@@ -77,6 +77,15 @@
     },
     {
       "id": "fa63"
+    },
+    {
+      "id": "7736",
+      "species": "Perro",
+      "date_of_birth": "2025-02-01",
+      "date_of_last_visit": "2025-02-25",
+      "name": "Cora",
+      "sex": "Hembra",
+      "owner": "Noemi Casaprima"
     }
   ]
 }

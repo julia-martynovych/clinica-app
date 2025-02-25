@@ -27,7 +27,6 @@ async function searchPets() {
         const species = document.getElementById("species").value;
         const date_of_birth = document.getElementById("date_of_birth").value;
         const sex = document.getElementById("sex").value;
-        console.log(sex)
         const owner  = document.getElementById("owner").value.toLowerCase();
         const date_of_last_visit = document.getElementById("date_of_last_visit").value;
 
@@ -74,48 +73,49 @@ async function addPet(pet) {
     }
 }
 
-// New Film
-async function addFilm() {
-    const title = document.getElementById("addTitle").value.trim();
-    const year = document.getElementById("addYear").value.trim();
-    const director = document.getElementById("addDirector").value.trim();
+// New Pet
+async function addPet() {
+    const species = document.getElementById("species_form").value;
+    const date_of_birth = document.getElementById("date_of_birth_form").value;
+    const date_of_last_visit = document.getElementById("date_of_last_visit_form").value;
+    const name = document.getElementById("name_form").value.trim();
+    const sex = document.getElementById("sex_form").value;
+    const owner = document.getElementById("owner_form").value.trim();
 
-    if (!title || !year || !director) {
-        alert("Please fill all fields.");
+    if (!species || !date_of_birth || !date_of_last_visit || !name || !sex || !owner) {
+        alert("Por favor rellena todos los campos");
         return;
     }
 
-    if (!/^\d{4}$/.test(year)) {
-        alert("Year must be exactly 4 digits");
-        return;
-    }
-
-    const newFilm = { title, year, director };
+    const newPet = { species, date_of_birth, date_of_last_visit, name, sex, owner };
 
     try {
-        const response = await fetch("http://localhost:3000/films", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newFilm),
+            body: JSON.stringify(newPet),
         });
 
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
         const data = await response.json();
-        alert("Film added successfully");
+        alert("Patitas añadidas con éxito");
         await printAllFilms();
 
         // Clean
-        document.getElementById("addTitle").value = "";
-        document.getElementById("addYear").value = "";
-        document.getElementById("addDirector").value = "";
-
+       
+        document.getElementById("species_form").value = "";
+        document.getElementById("date_of_birth_form").value = "";
+        document.getElementById("date_of_last_visit_form").value = "";
+        document.getElementById("name_form").value = "";
+        document.getElementById("sex_form").value = "";
+        document.getElementById("owner_form").value = "";
     } catch (error) {
         console.log("Error:", error);
     }
 }
 
-document.getElementById("addFilmButton").addEventListener("click", addFilm);
+// document.getElementById("addPetButton").addEventListener("click", addPet);
 
 
 
@@ -124,7 +124,7 @@ function printPets(pets) {
 
     
     if (pets.length === 0) {
-        table.insertAdjacentHTML("beforeend", "<tr><td colspan='4'>No se encuentran animales</td></tr>");
+        table.insertAdjacentHTML("beforeend", "<tr><td colspan='4'>No se han encontrado patitas</td></tr>");
         return;
     }
 
