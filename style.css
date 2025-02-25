@@ -203,7 +203,7 @@ select {
     font-weight: bold;
 }
 
-#update-btn, #edit-btn, #delete-btn {
+#update-btn, .edit-btn, #delete-btn {
 background-color: var(--yellow-color-dark);
 border: 0;
 border-radius: 3px;

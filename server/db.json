@@ -1,13 +1,13 @@
 {
   "pets": [
     {
-      "id": "1",
       "species": "Gato",
-      "name": "Chaika",
-      "sex": "Hembra",
       "date_of_birth": "2018-01-10",
+      "date_of_last_visit": "2025-01-10",
+      "name": "Chaika",
+      "sex": "Macho",
       "owner": "Carlos Perez",
-      "date_of_last_visit": "2025-01-10"
+      "id": "1"
     },
     {
       "id": "2",
@@ -73,6 +73,12 @@
       "date_of_last_visit": "2024-12-01"
     },
     {
+      "species": "Gato",
+      "date_of_birth": "2024-03-06",
+      "date_of_last_visit": "2025-02-05",
+      "name": "Ebi",
+      "sex": "Macho",
+      "owner": "Ángel Diaz",
       "id": "fa63"
     },
     {
@@ -92,6 +98,114 @@
       "name": "Nochka",
       "sex": "Hembra",
       "owner": "Julia Martynovych"
+    },
+    {
+      "id": "3e87",
+      "species": "Gato",
+      "date_of_birth": "2018-01-10",
+      "date_of_last_visit": "2025-01-10",
+      "name": "Chaika",
+      "sex": "Macho",
+      "owner": "Carlos Perez"
+    },
+    {
+      "species": "Perro",
+      "date_of_birth": "2024-10-09",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Klifford",
+      "sex": "Macho",
+      "owner": "Julia Martynovych",
+      "id": "13d5"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-10-05",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Blacki",
+      "sex": "Macho",
+      "owner": "Julia Martynovych",
+      "id": "b451"
+    },
+    {
+      "id": "7376",
+      "species": "Gato",
+      "date_of_birth": "2024-03-06",
+      "date_of_last_visit": "2025-02-05",
+      "name": "Ebi",
+      "sex": "Macho",
+      "owner": "Ángel Diaz"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-10-05",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Blacki",
+      "sex": "Macho",
+      "owner": "Julia Martynovych",
+      "id": "0fa8"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-10-02",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Love",
+      "sex": "Macho",
+      "owner": "Ana Martynovych",
+      "id": "2dc7"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-10-02",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Sallie",
+      "sex": "Hembra",
+      "owner": "Victoria Alvarez",
+      "id": "10f9"
+    },
+    {
+      "id": "0ab8",
+      "species": "Perro",
+      "date_of_birth": "2024-07-19",
+      "date_of_last_visit": "2025-02-16",
+      "name": "Edith",
+      "sex": "Hembra",
+      "owner": "Sandra Perez"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-10-02",
+      "date_of_last_visit": "2025-01-09",
+      "name": "Tom",
+      "sex": "Macho",
+      "owner": "Victoria Alvarez",
+      "id": "bf8f"
+    },
+    {
+      "species": "Perro",
+      "date_of_birth": "2019-01-09",
+      "date_of_last_visit": "2025-02-12",
+      "name": "Palms",
+      "sex": "Macho",
+      "owner": "Sergio Diaz",
+      "id": "fd41"
+    },
+    {
+      "species": "Perro",
+      "date_of_birth": "2015-03-03",
+      "date_of_last_visit": "2025-02-12",
+      "name": "Charli",
+      "sex": "Hembra",
+      "owner": "Sergio Diaz",
+      "id": "7d1d"
+    },
+    {
+      "id": "9688",
+      "species": "Perro",
+      "date_of_birth": "2023-06-05",
+      "date_of_last_visit": "2025-02-11",
+      "name": "Lobo",
+      "sex": "Macho",
+      "owner": "Juana Martinez"
     }
   ]
 }
