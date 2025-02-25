@@ -3,6 +3,16 @@ const table = document.getElementById("pets-table");
 const tableHead = table.outerHTML;
 let editPet = null;
 
+// READ: method GET 
+async function getAllPets(){
+    try {
+        let response = await fetch(API_URL);
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        throw new Error(`Error HTTP: ${response.status}`);
+    }
+}
 
 async function printAllPets() {
     let pets = await getAllPets();
