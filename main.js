@@ -54,6 +54,31 @@ async function searchPets() {
     }
 }
 
+// CREATE: metod POST
+async function addPet(pet) {
+    try {
+        
+        let pets = await getAllPets();
+
+        let petExists = pets.some(p => p.name === pet.name && p.date_of_birth === pet.date_of_birth);
+        if (petExists) {
+            console.log("Esas patitas ya existen");
+            return;
+        }
+
+        let response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(pet)
+        });
+
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+        console.log("Patitas añadidas con exito");
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
 function printPets(pets) {
     table.innerHTML = tableHead;
 
