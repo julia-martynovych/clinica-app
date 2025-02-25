@@ -106,6 +106,9 @@ button:hover{
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
 }
+button{
+    cursor: url('./src/img/cursor.svg'), auto;
+}
 
 /*Search Form*/
 .search-form{
@@ -184,4 +187,18 @@ select {
 }
 #pets-table th {
     font-weight: bold;
+}
+
+#update-btn, #edit-btn, #delete-btn {
+background-color: var(--yellow-color-dark);
+border: 0;
+border-radius: 3px;
+width: 20px;
+height: 20px;
+}
+
+#update-btn:hover,
+#edit-btn:hover,
+#delete-btn:hover {
+    background-color: var(--yellow-color-hover);
 }
