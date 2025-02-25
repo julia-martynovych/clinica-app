@@ -139,10 +139,9 @@ function printPets(pets) {
             <td><button id="delete-btn" class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
         `;
         row.querySelector(".delete-btn").addEventListener("click", (event) => deletePet(pet.id, event));
-        row.querySelector(".edit-btn").addEventListener("click", () => {
-            editPet = pet;
-            
-         });
+        row.querySelector(".edit-btn").addEventListener("click", (event) => editPet(pet.id, event));
+        
+        
         table.appendChild(row);
     });
    
@@ -151,20 +150,104 @@ function printPets(pets) {
 
 // UPDATE: metod PUT
 
-async function updatePet(pet) {  
-    try {
-        const response = await fetch(`${API_URL}/${id}`, {
-            method: "PUT",
-            body: JSON.stringify(pet)
-        });
+// async function updatePet(pet) {  
+//     try {
+//         const response = await fetch(`${API_URL}/${id}`, {
+//             method: "PUT",
+//             body: JSON.stringify(pet)
+//         });
 
-        if (!response.ok) throw new Error(`Error updating pet: ${response.status}`);
+//         if (!response.ok) throw new Error(`Error updating pet: ${response.status}`);
 
-        console.log(`Pet ${pet.id} updated successfully`);
-    } catch (error) {
-        console.log("Error:", error);
-    }
+//         console.log(`Pet ${pet.id} updated successfully`);
+//     } catch (error) {
+//         console.log("Error:", error);
+//     }
+// }
+// READ: Obtener una película por ID (GET)
+// async function getOneFilm(id) {
+//   try {
+//     const response = await fetch(`${API_URL}/${id}`);
+//     const data = await response.json();
+//     console.log("Película cargada:", data);
+//     return data;
+//   } catch (error) {
+//     console.error("Error al obtener la película:", error);
+//   }
+// }
+// Cargar una película en el formulario para editarla
+async function editPet(id) {
+  const pet = await fetch(`${API_URL}/${id}`);
+  if (pet) { 
+    document.getElementById("species_form").value = "pet.species";
+    document.getElementById("date_of_birth_form").value = "pet.date_of_birth";
+    document.getElementById("date_of_last_visit_form").value = "pet.date_of_last_visit";
+    document.getElementById("name_form").value = "pet.name";
+    document.getElementById("sex_form").value = "pet.sex";
+      document.getElementById("owner_form").value = "pet.owner";
+      
+    currentFilmId = id; // Cambiar a modo edición
+    document.getElementById("submitBtn").textContent = "Guardar Cambios ✔";
+    document.getElementById("cancelEditBtn").style.display = "inline";
+    document.getElementById("formTitle").textContent = "Editar Película";
+  }
 }
+
+// Reiniciar el formulario a su estado por defecto (modo creación)
+function resetForm() {
+  document.getElementById("formPost").reset();
+  currentFilmId = null;
+  document.getElementById("submitBtn").textContent = "Añadir :film_frames:";
+  document.getElementById("cancelEditBtn").style.display = "none";
+  document.getElementById("formTitle").textContent = "Añadir :film_frames:";
+}
+
+// Cancelar la edición y restablecer el formulario
+function cancelEdit() {
+  resetForm();
+}
+// Variable global para controlar el modo: null = creación, o contiene el id en modo edición.
+let currentFilmId = null;
+
+// Asignamos el evento de submit al formulario
+document.getElementById("formPost").addEventListener("submit", handleFormSubmit);
+// Con esta funcion manejamos el formulario 
+async function handleFormSubmit(event) {
+  event.preventDefault();
+  // Si currentFilmId tiene valor, estamos en modo edición, sino en modo creación.
+  if (currentFilmId) {
+    await updateFilm(currentFilmId);
+  } else {
+    await createFilm();
+  }
+  printFilms();
+  resetForm();
+} 
+
+// UPDATE: Actualizar una película (PUT)
+async function updateFilm(id) {
+  // const Id = document.getElementById("filmId").value;
+  const Title = document.getElementById("filmTitle").value;
+  const Year = document.getElementById("filmYear").value;
+  const Director = document.getElementById("filmDirector").value;
+  const data = { Title, Year, Director };
+
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+   
+    const result = await response.json();
+    console.log("Película actualizada:", result);
+    alert("Película actualizada correctamente");
+  } catch (error) {
+    console.error("Error al actualizar la película:", error);
+    alert("Hubo un error al actualizar la película");
+  }
+}
+
 const openFormBtn = document.getElementById("openFormBtn");
 const formPost = document.getElementById("formPost");
 const closeFormBtn = document.getElementById("closeFormBtn");
