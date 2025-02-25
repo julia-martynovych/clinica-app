@@ -72,8 +72,9 @@ function printPets(pets) {
             <td>${pet.sex}</td>
             <td>${pet.owner}</td>
             <td>${pet.date_of_last_visit}</td>
-            <td><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
+            <td><button class="update-btn"><i class="fa-solid fa-arrows-rotate"></i></button></td>
             <td><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></td>
+            <td><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
         `;
         row.querySelector(".delete-btn").addEventListener("click", (event) => deleteFilm(pet.id, event));
         row.querySelector(".edit-btn").addEventListener("click", () => {
