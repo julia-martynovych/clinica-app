@@ -23,24 +23,25 @@ async function printAllPets() {
 async function searchPets() {
     try {
         const id = document.getElementById("id").value;
-        const species = document.getElementById("species").value.toLowerCase();
         const name = document.getElementById("name").value.toLowerCase();
-        const sex = document.getElementById("sex").value.toLowerCase();
-        const date_of_birth = document.getElementById("date_of_birth").value.toLowerCase();
+        const species = document.getElementById("species").value;
+        const date_of_birth = document.getElementById("date_of_birth").value;
+        const sex = document.getElementById("sex").value;
+        console.log(sex)
         const owner  = document.getElementById("owner").value.toLowerCase();
-        const date_of_last_visit = document.getElementById("date_of_last_visit").value.toLowerCase();
+        const date_of_last_visit = document.getElementById("date_of_last_visit").value;
 
         let pets = await getAllPets();
 
       
         let filteredPets = pets.filter((pet) => {
             const matchesId = id ? pet.id == id : true;
-            const matchesSpecies = species ? pet.species.includes(species) : true;
+            const matchesSpecies = species ? pet.species.trim().toLowerCase() === species.trim().toLowerCase() : true;
             const matchesName = name ? pet.name.toLowerCase().includes(name) : true;
             const matchesSex = sex ? pet.sex.includes(sex) : true;
             const matchesDate_of_birth = date_of_birth ? pet.date_of_birth.includes(date_of_birth) : true;
             const matchesOwner = owner ? pet.owner.toLowerCase().includes(owner) : true;
-            const matchesDate_of_last_visit = date_of_last_visit ? pet.date_of_last_visit.includes(date_of_last_visit) : true;
+            const matchesDate_of_last_visit = date_of_last_visit ? pet.date_of_last_visit === date_of_last_visit : true;
             
             return matchesId && matchesSpecies && matchesName && matchesSex && matchesDate_of_birth && matchesOwner && matchesDate_of_last_visit;
         });
