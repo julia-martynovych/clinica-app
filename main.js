@@ -73,6 +73,52 @@ async function addPet(pet) {
         console.log("Error:", error);
     }
 }
+
+// New Film
+async function addFilm() {
+    const title = document.getElementById("addTitle").value.trim();
+    const year = document.getElementById("addYear").value.trim();
+    const director = document.getElementById("addDirector").value.trim();
+
+    if (!title || !year || !director) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (!/^\d{4}$/.test(year)) {
+        alert("Year must be exactly 4 digits");
+        return;
+    }
+
+    const newFilm = { title, year, director };
+
+    try {
+        const response = await fetch("http://localhost:3000/films", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newFilm),
+        });
+
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+        const data = await response.json();
+        alert("Film added successfully");
+        await printAllFilms();
+
+        // Clean
+        document.getElementById("addTitle").value = "";
+        document.getElementById("addYear").value = "";
+        document.getElementById("addDirector").value = "";
+
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+document.getElementById("addFilmButton").addEventListener("click", addFilm);
+
+
+
 function printPets(pets) {
     table.innerHTML = tableHead;
 
