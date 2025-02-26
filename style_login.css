@@ -198,12 +198,12 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    max-width: 400px;
     position: relative;
 }
 
 .cookie-content {
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .close {
@@ -310,7 +310,7 @@ button:hover {
 
     /* Ajustes para el formulario de login */
     .login-container {
-        max-width: 90%;
+        max-width: 50%;
         margin: 2rem auto;
         padding: 15px;
     }
@@ -324,12 +324,16 @@ button:hover {
         font-size: 16px;
     }
 
+   
     /* Ajustes para los botones */
+    
     .button--yellow-light, .button--yellow-stroke {
         height: 35px;
         font-size: 16px;
         padding-left: 15px;
         padding-right: 15px;
+        max-width: 50%;
+        
     }
 
     /* Ajustes para los modales */
