@@ -1,0 +1,297 @@
+:root {
+    --yellow-color-light: #F8CE51;
+    --yellow-color-dark: #D3AC37;
+    --yellow-color-hover: #F8E4AC;
+    --main-color-black: #34393C;
+    --color-placeholders: #E5EFEE;
+    --color-white: #FFFFFF;
+    --font-size-h1: 64px;
+    --font-size-p: 16px;
+    --font-family-h1: "Irish Grover";
+    --font-family-p: "Jost";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+body {
+    font-family: var(--font-family-p);
+}
+
+/* Header / Nav */
+.login--container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login--box {
+    width: 25%;
+    text-align: center;
+}
+
+.nav--title {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+.nav--login{
+    width: 25%;
+}
+
+h1 {
+    font-family: var(--font-family-h1);
+    font-size: var(--font-size-h1);
+    color: var(--main-color-black);
+}
+
+.paw {
+    color: var(--yellow-color-dark);
+}
+
+p {
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+    color: var(--main-color-black);
+}
+
+.nav--title p {
+    margin-bottom: 36px;
+}
+
+.img--logo {
+    height: 150px;
+    width: auto;
+}
+
+/* Formulario de login */
+.login-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+    color: var(--main-color-black);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--color-placeholders);
+    font-size: var(--font-size-p);
+    font-family: var(--font-family-p);
+    color: var(--main-color-black);
+    box-sizing: border-box;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.remember-me label {
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+    color: var(--main-color-black);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: var(--font-family-p);
+}
+
+/* Botones */
+.button--yellow-light {
+    background-color: var(--yellow-color-light);
+    color: var(--main-color-black);
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button--yellow-light:hover {
+    background-color: var(--yellow-color-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
+}
+
+.button--yellow-stroke {
+    background-color: var(--color-white);
+    color: var(--main-color-black);
+    border: solid 3px var(--yellow-color-dark);
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+    cursor: pointer;
+    width: 100%;
+}
+
+.button--yellow-stroke:hover {
+    border: solid 3px var(--yellow-color-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
+}
+
+/* Estilos para los modales */
+.modal, .cookie-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content, .cookie-content {
+    background-color: var(--color-white);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    position: relative;
+}
+
+.cookie-content {
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--main-color-black);
+}
+
+/* Aviso de cookies al final de la página */
+.cookie-modal {
+    align-items: flex-end;
+    display: none;
+}
+
+.cookie-content {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.cookie-content h3 {
+    font-family: var(--font-family-p);
+    margin-bottom: 10px;
+    color: var(--main-color-black);
+}
+
+.cookie-content p {
+    margin-bottom: 15px;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cookie-buttons button {
+    width: auto;
+}
+
+/* Estilos adicionales */
+#login--question {
+    text-align: center;
+    margin-top: 15px;
+    font-family: var(--font-family-p);
+    font-size: var(--font-size-p);
+}
+
+#login--question a {
+    color: var(--yellow-color-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#login--question a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el formulario de registro */
+#register-modal h2 {
+    font-family: var(--font-family-p);
+    color: var(--main-color-black);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .login--container {
+        flex-direction: column;
+    }
+    
+    .login--box, .nav--title {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    h1 {
+        font-size: calc(var(--font-size-h1) * 0.7);
+    }
+    
+    .img--logo {
+        height: 100px;
+    }
+}
