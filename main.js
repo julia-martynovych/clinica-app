@@ -81,7 +81,7 @@ function printPets(pets) {
         `;
         row.querySelector(".delete-btn").addEventListener("click", (event) => deletePet(pet.id, event));
         row.querySelector(".edit-btn").addEventListener("click", (event) => editPet(pet.id, event));
-        row.querySelector(".update-btn").addEventListener("click", (event) => updateLastVisitDate(pet.id, event)); // Добавляем обработчик для кнопки обновления
+        row.querySelector(".update-btn").addEventListener("click", (event) => updateLastVisitDate(pet.id, event));
         table.appendChild(row);
     });
 }
@@ -93,6 +93,22 @@ function clearForm() {
     document.getElementById("name_form").value = "";
     document.getElementById("sex_form").value = "";
     document.getElementById("owner_form").value = "";
+}
+
+// Validation
+function validateForm() {
+    const species = document.getElementById("species_form").value.trim();
+    const date_of_birth = document.getElementById("date_of_birth_form").value.trim();
+    const date_of_last_visit = document.getElementById("date_of_last_visit_form").value.trim();
+    const name = document.getElementById("name_form").value.trim();
+    const sex = document.getElementById("sex_form").value.trim();
+    const owner = document.getElementById("owner_form").value.trim();
+
+    if (!species || !date_of_birth || !date_of_last_visit || !name || !sex || !owner) {
+        alert("Por favor, rellena todos los campos.");
+        return false;
+    }
+    return true;
 }
 
 document.addEventListener("click", async function (event) {
@@ -120,27 +136,29 @@ document.addEventListener("click", async function (event) {
         document.getElementById("owner_form").value = pet.owner;
 
         formPost.setAttribute("data-id", petId);
-        formPost.setAttribute("data-mode", "edit"); 
+        formPost.setAttribute("data-mode", "edit");
     } catch (error) {
         console.log("Error al cargar el animal:", error);
     }
 });
 
 openFormBtn.onclick = function () {
-    clearForm(); 
+    clearForm();
     formPost.style.display = "block";
     document.querySelector(".create-form-title").textContent = "Crear nuevo animal";
     formSubmitBtn.textContent = "Crear";
-    formPost.removeAttribute("data-id"); 
-    formPost.setAttribute("data-mode", "create"); 
+    formPost.removeAttribute("data-id");
+    formPost.setAttribute("data-mode", "create");
 };
 
 // Create form
 formSubmitBtn.addEventListener("click", async function (event) {
     event.preventDefault();
 
+    if (!validateForm()) return;
+
     const petId = formPost.getAttribute("data-id");
-    const mode = formPost.getAttribute("data-mode"); 
+    const mode = formPost.getAttribute("data-mode");
 
     const updatedPet = {
         species: document.getElementById("species_form").value,
@@ -209,20 +227,18 @@ async function deletePet(id, event) {
 // UPDATE: Update last visit date
 async function updateLastVisitDate(petId, event) {
     try {
-        const today = new Date().toISOString().split("T")[0]; 
+        const today = new Date().toISOString().split("T")[0];
 
-        
         const response = await fetch(`${API_URL}/${petId}`, {
-            method: "PATCH", 
+            method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ date_of_last_visit: today })
         });
 
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 
-        
         const row = event.target.closest("tr");
-        row.querySelector("td:nth-child(7)").textContent = formatDate(today); 
+        row.querySelector("td:nth-child(7)").textContent = formatDate(today);
 
         alert("Fecha de última visita actualizada correctamente");
     } catch (error) {
@@ -233,7 +249,7 @@ async function updateLastVisitDate(petId, event) {
 // Close form when clicking outside
 document.addEventListener("click", function (event) {
     const formPost = document.getElementById("formPost");
-    if (event.target === formPost) { 
-        formPost.style.display = "none"; 
+    if (event.target === formPost) {
+        formPost.style.display = "none";
     }
 });

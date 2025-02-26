@@ -188,6 +188,15 @@
       "name": "Nicki",
       "sex": "Macho",
       "owner": "Sandra Bullok"
+    },
+    {
+      "species": "Gato",
+      "date_of_birth": "2023-12-01",
+      "date_of_last_visit": "2025-02-26",
+      "name": "Shark",
+      "sex": "Macho",
+      "owner": "Anna Brown",
+      "id": "d0ef"
     }
   ]
 }
