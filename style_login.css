@@ -4,6 +4,7 @@
     --yellow-color-hover:#F8E4AC;
     --main-color-black: #34393C;
     --color-placeholders: #E5EFEE;
+    --color-error-message:red;
     --color-dog: #40C9A2;
     --color-cat: #2F9C95;
     --color-white: #FFFFFF;
@@ -326,14 +327,19 @@ button:hover {
 
    
     /* Ajustes para los botones */
-    
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
     .button--yellow-light, .button--yellow-stroke {
         height: 35px;
         font-size: 16px;
         padding-left: 15px;
         padding-right: 15px;
         max-width: 50%;
-        
+
     }
 
     /* Ajustes para los modales */
