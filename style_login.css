@@ -43,6 +43,13 @@ body {
     text-align: center;
 }
 
+.nav--login{
+    
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    text-align: center;
+}
 h1 {
     font-family: var(--font-family-h1);
     font-size: var(--font-size-h1);
