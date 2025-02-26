@@ -2,9 +2,11 @@
     --yellow-color-light: #F8CE51;
     --yellow-color-dark: #D3AC37;
     --yellow-color-hover: #F8E4AC;
-    --main-color-black: #34393C;
+    --main-color-black: #e1e4e6;
     --color-placeholders: #E5EFEE;
     --color-white: #FFFFFF;
+    --color-box-shadow: rgba(0, 0, 0, 0.1);
+    --color-error-message:#e74c3c;
     --font-size-h1: 64px;
     --font-size-p: 16px;
     --font-family-h1: "Irish Grover";
@@ -77,7 +79,7 @@ p {
     margin: 3rem auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--color-box-shadow);
     background-color: var(--color-white);
 }
 
