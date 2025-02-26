@@ -279,3 +279,18 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 });
+window.addEventListener("orientationchange", function() {
+    checkOrientation();
+});
+
+function checkOrientation() {
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        // Mostrar mensaje o indicación visual
+        document.getElementById("orientationMessage").style.display = "block";
+    } else {
+        document.getElementById("orientationMessage").style.display = "none";
+    }
+}
+
+// Comprobar al cargar la página
+document.addEventListener("DOMContentLoaded", checkOrientation);
