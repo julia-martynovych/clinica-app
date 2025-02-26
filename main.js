@@ -285,17 +285,35 @@ window.addEventListener("orientationchange", function() {
 
 
 // Modal del movil
+window.addEventListener("orientationchange", function() {
+    setTimeout(checkOrientation, 300); // Pequeño retraso para que la orientación se actualice
+});
+
 function checkOrientation() {
     if (window.matchMedia("(orientation: portrait)").matches) {
         // Mostrar el aviso cuando esté en vertical
         document.getElementById("orientationMessage").style.display = "block";
-        document.body.style.overflow = "hidden"; // Bloquear el scroll
+        document.body.style.overflow = "hidden"; // Bloquear el scroll en modo vertical
     } else {
         // Ocultar el aviso cuando esté en horizontal
         document.getElementById("orientationMessage").style.display = "none";
-        document.body.style.overflow = "auto"; // Permitir scroll nuevamente
+        document.body.style.overflow = ""; // Restaurar el scroll predeterminado
+        document.body.style.overflowY = "auto"; // Asegurar que el scroll vertical funciona
     }
 }
 
 // Comprobar al cargar la página
-document.addEventListener("DOMContentLoaded", checkOrientation);
+document.addEventListener("DOMContentLoaded", function() {
+    checkOrientation();
+    
+    // Asegurar que el scroll está habilitado en orientación horizontal
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        document.body.style.overflow = "";
+        document.body.style.overflowY = "auto";
+    }
+});
+
+// Agregar un listener para gestionar cambios de tamaño de ventana también
+window.addEventListener("resize", function() {
+    checkOrientation();
+});
