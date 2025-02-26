@@ -3,7 +3,7 @@
     {
       "species": "Gato",
       "date_of_birth": "2018-01-10",
-      "date_of_last_visit": "2025-01-10",
+      "date_of_last_visit": "2025-02-26",
       "name": "Chaika",
       "sex": "Macho",
       "owner": "Carlos Perez",
@@ -34,7 +34,7 @@
       "sex": "Macho",
       "date_of_birth": "2017-12-01",
       "owner": "Ana Martínez",
-      "date_of_last_visit": "2024-11-30"
+      "date_of_last_visit": "2025-02-26"
     },
     {
       "id": "5",

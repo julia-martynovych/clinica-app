@@ -181,6 +181,12 @@ button:hover {
     box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 /* Estilos para los modales */
 .modal, .cookie-modal {
     display: none;
@@ -279,6 +285,9 @@ button:hover {
     color: var(--main-color-black);
     margin-bottom: 20px;
     text-align: center;
+}
+button{
+    max-width: 50%;
 }
 
 /* Media Queries para dispositivos móviles */
