@@ -1,14 +1,15 @@
 :root {
     --yellow-color-light: #F8CE51;
     --yellow-color-dark: #D3AC37;
-    --yellow-color-hover: #F8E4AC;
-    --main-color-black: #e1e4e6;
+    --yellow-color-hover:#F8E4AC;
+    --main-color-black: #34393C;
     --color-placeholders: #E5EFEE;
+    --color-dog: #40C9A2;
+    --color-cat: #2F9C95;
     --color-white: #FFFFFF;
-    --color-box-shadow: rgba(0, 0, 0, 0.1);
-    --color-error-message:#e74c3c;
     --font-size-h1: 64px;
     --font-size-h1-mobile: 40px;
+    --font-size-h1-tablet: 48px;
     --font-size-p: 16px;
     --font-family-h1: "Irish Grover";
     --font-family-p: "Jost";
