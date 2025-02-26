@@ -202,10 +202,19 @@
       "id": "a64a",
       "species": "Perro",
       "date_of_birth": "1998-03-04",
-      "date_of_last_visit": "2024-11-07",
+      "date_of_last_visit": "2025-02-26",
       "name": "Scubi",
       "sex": "Macho",
       "owner": "Shaggi Tompson"
+    },
+    {
+      "species": "Perro",
+      "date_of_birth": "2007-08-09",
+      "date_of_last_visit": "2025-01-29",
+      "name": "Zolda",
+      "sex": "Hembra",
+      "owner": "Katerine Fatch",
+      "id": "706f"
     }
   ]
 }

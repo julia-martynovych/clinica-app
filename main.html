@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link
@@ -15,6 +16,7 @@
         rel="stylesheet">
 
 </head>
+
 <body>
     <nav class="container--nav">
         <div class="nav--logo">
@@ -22,7 +24,7 @@
         </div>
         <div class="nav--title">
             <p>Centro veterinario</p>
-            <h1><i class="fa-solid fa-paw , paw"></i>  Patitas Felices  <i class="fa-solid fa-paw , paw"></i></h1>
+            <h1><i class="fa-solid fa-paw , paw"></i> Patitas Felices <i class="fa-solid fa-paw , paw"></i></h1>
         </div>
         <div class="nav--login">
             <p id="user-greeting"> Hola, </p>
@@ -30,136 +32,142 @@
         </div>
     </nav>
     <main>
-    <div class="search-form">
-        <div>
-            <p>Buscar patitas</p>
+        <div class="search-form">
+            <div>
+                <p>Buscar patitas</p>
+            </div>
+            <section class="filters">
+                <div class="filter">
+                    <label for="id">Id:</label>
+                    <input type="number" id="id" class="input-field" placeholder="Id">
+                </div>
+
+                <div class="filter">
+                    <label for="species">Especie:</label>
+                    <select id="species" name="species">
+                        <option value="" disabled selected>Elige...</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Perro">Perro</option>
+                    </select>
+                </div>
+
+                <div class="filter">
+                    <label for="birthday">Cumple:</label>
+                    <input type="date" id="date_of_birth" class="input-field" placeholder="date">
+                </div>
+
+                <div class="filter">
+                    <label for="lastVisit">Ultima visita:</label>
+                    <input type="date" id="date_of_last_visit" class="input-field" placeholder="date">
+                </div>
+
+                <div class="filter">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" class="input-field" placeholder="Nombre">
+                </div>
+
+                <div class="filter">
+                    <label for="sex">Sexo:</label>
+                    <select id="sex" name="sex">
+                        <option value="" disabled selected>Elige...</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+
+                <div class="filter">
+                    <label for="owner">Propietario:</label>
+                    <input type="text" id="owner" class="input-field" placeholder="Propietario">
+                </div>
+
+                <div class="filter-button">
+                    <button id="searchButton" type="submit" class="button--yellow—light"
+                        onclick="searchPets()">Buscar</button>
+                </div>
+            </section>
         </div>
-        <section class="filters">
-            <div class="filter">
-                <label for="id">Id:</label>
-                <input type="number" id="id" class="input-field" placeholder="Id">
-            </div>
-    
-            <div class="filter">
-                <label for="species">Especie:</label>
-                <select id="species" name="species">
-                    <option value="" disabled selected>Elige...</option>
-                    <option value="Gato">Gato</option>
-                    <option value="Perro">Perro</option>
-                </select>
-            </div>
-    
-            <div class="filter">
-                <label for="birthday">Fecha de nacimiento:</label>
-                <input type="date" id="date_of_birth" class="input-field" placeholder="date">
-            </div>
-    
-            <div class="filter">
-                <label for="lastVisit">Ultima visita:</label>
-                <input type="date" id="date_of_last_visit" class="input-field" placeholder="date">
-            </div>
-    
-            <div class="filter">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" class="input-field" placeholder="Nombre">
-            </div>
-    
-            <div class="filter">
-                <label for="sex">Sexo:</label>
-                <select id="sex" name="sex">
-                    <option value="" disabled selected>Elige...</option>
-                    <option value="Macho">Macho</option>
-                    <option value="Hembra">Hembra</option>
-                </select>
-            </div>
-    
-            <div class="filter">
-                <label for="owner">Propietario:</label>
-                <input type="text" id="owner" class="input-field" placeholder="Propietario">
-            </div>
-    
-            <div class="filter-button">
-                <button id="searchButton" type="submit" class="button--yellow—light" onclick="searchPets()">Buscar</button>
-            </div>
-        </section>
-    </div>
         <section class="table--database">
             <div>
                 <p>Base de datos de patitas</p>
             </div>
-            <div>
+            <div class="table-container">
                 <table id="pets-table">
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Especie</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>Sexo</th>
-                        <th>Propietario</th> 
-                        <th>Ultima Visita</th> 
-                        <th></th> 
-                        <th></th> 
-                        <th></th> 
-                    </tr>
-            
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Especie</th>
+                            <th>Cumple</th>
+                            <th>Sexo</th>
+                            <th>Propietario</th>
+                            <th>Ultima Visita</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Строки таблицы будут добавляться динамически -->
+                    </tbody>
                 </table>
             </div>
             <div>
-            <button class="button--yellow—light" onclick="printAllPets()">Cargar todos</button>
-            <button class="button--yellow—stroke" id="openFormBtn">Crear nuevo</button>
+                <button class="button--yellow—light" onclick="printAllPets()">Cargar todos</button>
+                <button class="button--yellow—stroke" id="openFormBtn">Crear nuevo</button>
             </div>
-            </section>
-            <div id="formPost" class="modal">
-                <div class="modal-content">
-                    <span id="closeFormBtn" class="close">&times;</span>
-                    <h2 class="create-form-title">Crear nuevas patitas</h2>
-                    <section class="create-form-main">
-                        <div class="create-form">
-                            <label for="species_form">Especie:</label>
-                            <select id="species_form" name="species">
-                                <option value="" disabled selected>Elige...</option>
-                                <option value="Gato">Gato</option>
-                                <option value="Perro">Perro</option>
-                            </select>
-                        </div>
-                
-                        <div class="create-form">
-                            <label for="birthday">Fecha de nacimiento:</label>
-                            <input type="date" id="date_of_birth_form" class="input-field" placeholder="date">
-                        </div>
-                
-                        <div class="create-form">
-                            <label for="lastVisit">Ultima visita:</label>
-                            <input type="date" id="date_of_last_visit_form" class="input-field" placeholder="date">
-                        </div>
-                
-                        <div class="create-form">
-                            <label for="name">Nombre:</label>
-                            <input type="text" id="name_form" class="input-field" placeholder="Nombre">
-                        </div>
-                
-                        <div class="create-form">
-                            <label for="sex_form">Sexo:</label>
-                            <select id="sex_form" name="sex">
-                                <option value="" disabled selected>Elige...</option>
-                                <option value="Macho">Macho</option>
-                                <option value="Hembra">Hembra</option>
-                            </select>
-                        </div>
-                
-                        <div class="create-form">
-                            <label for="owner">Propietario:</label>
-                            <input type="text" id="owner_form" class="input-field" placeholder="Propietario">
-                        </div>
-                
-                        <div class="create-form-button">
-                            <button id="formSubmitBtn" class="button--yellow—light" onclick="addPet()">Añadir Patitas</button>
-                        </div>
-                    </section>
-                </div>
+        </section>
+        <div id="formPost" class="modal">
+            <div class="modal-content">
+                <span id="closeFormBtn" class="close">&times;</span>
+                <h2 class="create-form-title">Crear nuevas patitas</h2>
+                <section class="create-form-main">
+                    <div class="create-form">
+                        <label for="species_form">Especie:</label>
+                        <select id="species_form" name="species">
+                            <option value="" disabled selected>Elige...</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Perro">Perro</option>
+                        </select>
+                    </div>
+
+                    <div class="create-form">
+                        <label for="birthday">Cumple:</label>
+                        <input type="date" id="date_of_birth_form" class="input-field" placeholder="date">
+                    </div>
+
+                    <div class="create-form">
+                        <label for="lastVisit">Ultima visita:</label>
+                        <input type="date" id="date_of_last_visit_form" class="input-field" placeholder="date">
+                    </div>
+
+                    <div class="create-form">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name_form" class="input-field" placeholder="Nombre">
+                    </div>
+
+                    <div class="create-form">
+                        <label for="sex_form">Sexo:</label>
+                        <select id="sex_form" name="sex">
+                            <option value="" disabled selected>Elige...</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                        </select>
+                    </div>
+
+                    <div class="create-form">
+                        <label for="owner">Propietario:</label>
+                        <input type="text" id="owner_form" class="input-field" placeholder="Propietario">
+                    </div>
+
+                    <div class="create-form-button">
+                        <button id="formSubmitBtn" class="button--yellow—light" onclick="addPet()">Añadir
+                            Patitas</button>
+                    </div>
+                </section>
             </div>
-        
+        </div>
     </main>
     <script src="./main.js"></script>
 </body>
+
 </html>
