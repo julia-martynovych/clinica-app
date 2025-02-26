@@ -252,4 +252,30 @@ document.addEventListener("click", function (event) {
     if (event.target === formPost) {
         formPost.style.display = "none";
     }
+    
+});
+// Enlace de login
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Verificar si hay un usuario activo
+  const currentUser = localStorage.getItem("currentUser");
+  
+  // Elemento donde mostraremos el saludo al usuario
+  const userGreeting = document.getElementById("user-greeting");
+  
+  if (currentUser && userGreeting) {
+      // Cambiar "Hola Doctora" por "Hola [nombre de usuario]"
+      userGreeting.textContent = `Hola ${currentUser}`;
+  }
+  
+  // Manejador para cerrar sesión
+  const logoutButton = document.getElementById("logout-button");
+  if (logoutButton) {
+      logoutButton.addEventListener("click", function() {
+          // Eliminar el usuario actual del localStorage
+          localStorage.removeItem("currentUser");
+          // Redirigir a la página de login
+          window.location.href = "index.html";
+      });
+  }
 });
