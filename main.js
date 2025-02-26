@@ -85,7 +85,7 @@ function printPets(pets) {
         table.appendChild(row);
     });
 }
-
+//Clear form
 function clearForm() {
     document.getElementById("species_form").value = "";
     document.getElementById("date_of_birth_form").value = "";
