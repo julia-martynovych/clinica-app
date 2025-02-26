@@ -172,13 +172,22 @@
       "owner": "Antonia Campomanes"
     },
     {
-      "id": "746e",
       "species": "Perro",
       "date_of_birth": "2025-02-03",
-      "date_of_last_visit": "2025-02-25",
+      "date_of_last_visit": "2025-02-26",
       "name": "Chak",
       "sex": "Macho",
-      "owner": "Teo Martunovych"
+      "owner": "Teo Martunovych",
+      "id": "746e"
+    },
+    {
+      "id": "407c",
+      "species": "Gato",
+      "date_of_birth": "2017-07-10",
+      "date_of_last_visit": "2025-02-26",
+      "name": "Nicki",
+      "sex": "Macho",
+      "owner": "Sandra Bullok"
     }
   ]
 }
