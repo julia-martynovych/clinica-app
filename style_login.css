@@ -279,89 +279,91 @@ button:hover {
     text-align: center;
 }
 
-/* Media queries para responsividad */
-@media (max-width: 768px) {
-    /* .login--container {
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    /* Ajustes para el navegador y logo */
+    h1 {
+        font-size: var(--font-size-h1-mobile);
+    }
+
+    .img--logo {
+        height: 80px;
+        width: auto;
+    }
+
+    .nav--title p {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    /* Ajustes para el layout del nav */
+    .login--container {
+        flex-direction: column;
+        margin-top: 12px;
+    }
+
+    .login--box, .nav--title, .nav--login {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Ajustes para el formulario de login */
+    .login-container {
+        max-width: 90%;
+        margin: 2rem auto;
+        padding: 15px;
+    }
+
+    .input-group input {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .remember-me label {
+        font-size: 16px;
+    }
+
+    /* Ajustes para los botones */
+    .button--yellow-light, .button--yellow-stroke {
+        height: 35px;
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Ajustes para los modales */
+    .modal-content, .cookie-content {
+        margin: 20% auto;
+        padding: 15px;
+        max-width: 80%;
+    }
+
+    /* Ajustes para el aviso de cookies */
+    .cookie-buttons {
         flex-direction: column;
     }
     
-    .login--box, .nav--title {
+    .cookie-buttons button {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     
+    #login--question {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños */
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: calc(var(--font-size-h1) * 0.7);
+        font-size: 30px;
     }
     
     .img--logo {
-        height: 100px;
+        height: 80px;
     }
- */
-
-  
-    /* nav */
- .container--nav {
-    margin-top: 24px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 6px;
- }
-
- .nav--logo {
-    display: flex;
-    width: 20px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
- }
-
- .nav--title {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 16px;
-
-
- }
-
- .nav--login {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-   text-align: center;
-   align-items: center;
-   margin-bottom: 16px;
- }
-
- #nav--login--user {
-    font-size: 30px;
-    margin-right: 16px;
-
- }
-.img--logo {
-    height: 80px;
-    width: auto;
     
-}
-
- h1 {
-    font-size: var(--font-size-h1-mobile);
-
-}
-
-.paw {
-    color: var(--yellow-color-dark);
-    font-size: 12px;
-}
-
-#user-greeting {
-    margin-right: 16px;
-}
-#logout-button {
-    margin-top: 0;
-}
-
+    .login-container {
+        padding: 10px;
+    }
 }
