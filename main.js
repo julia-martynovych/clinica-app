@@ -280,15 +280,20 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 window.addEventListener("orientationchange", function() {
-    checkOrientation();
+    setTimeout(checkOrientation, 300); // Pequeño retraso para asegurar que la orientación ha cambiado
 });
 
+
+// Modal del movil
 function checkOrientation() {
     if (window.matchMedia("(orientation: portrait)").matches) {
-        // Mostrar mensaje o indicación visual
+        // Mostrar el aviso cuando esté en vertical
         document.getElementById("orientationMessage").style.display = "block";
+        document.body.style.overflow = "hidden"; // Bloquear el scroll
     } else {
+        // Ocultar el aviso cuando esté en horizontal
         document.getElementById("orientationMessage").style.display = "none";
+        document.body.style.overflow = "auto"; // Permitir scroll nuevamente
     }
 }
 
