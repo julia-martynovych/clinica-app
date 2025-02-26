@@ -197,6 +197,15 @@
       "sex": "Macho",
       "owner": "Anna Brown",
       "id": "d0ef"
+    },
+    {
+      "id": "a64a",
+      "species": "Perro",
+      "date_of_birth": "1998-03-04",
+      "date_of_last_visit": "2024-11-07",
+      "name": "Scubi",
+      "sex": "Macho",
+      "owner": "Shaggi Tompson"
     }
   ]
 }
