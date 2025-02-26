@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if (currentUser && userGreeting) {
       // Cambiar "Hola Doctora" por "Hola [nombre de usuario]"
-      userGreeting.textContent = `Hola ${currentUser}`;
+      userGreeting.textContent = `Hola,  ${currentUser}`;
   }
   
   // Manejador para cerrar sesión
