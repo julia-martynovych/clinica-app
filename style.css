@@ -67,6 +67,7 @@
 
 #logout-button {
     margin-top: 16px;
+    width: 130px;
 }
 
 h1 {
@@ -198,6 +199,7 @@ input {
 
 #searchButton {
     align-self: center;
+    width: 130px;
 }
 
 .input-field,
@@ -261,6 +263,13 @@ select {
 
 #openFormBtn {
     margin-left: 16px;
+    width: 130px;
+    height: 30px;
+}
+
+#loadAllBtn{
+    width: 130px;
+    height: 30px;
 }
 
 /*Modal Form*/

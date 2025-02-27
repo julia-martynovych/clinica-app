@@ -140,15 +140,20 @@ p {
     color: var(--main-color-black);
     border-radius: 5px;
     border: 0;
-    height: 40px;
     padding-left: 20px;
     padding-right: 20px;
     font-family: var(--font-family-p);
     font-size: var(--font-size-p);
     cursor: pointer;
-    width: 100%;
     margin-bottom: 10px;
 }
+
+#enterBtn, #registerBtn{
+    width: 130px;
+    height: 30px;
+}
+
+
 
 .button--yellow-light:hover {
     background-color: var(--yellow-color-hover);
