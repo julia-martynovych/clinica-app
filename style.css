@@ -229,6 +229,7 @@ select {
 }
 
 #pets-table th {
+    background-color: var(--yellow-color-light);
     font-weight: bold;
 }
 
