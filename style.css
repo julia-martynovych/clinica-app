@@ -231,6 +231,9 @@ height: 20px;
     font-size: 24px;
 }
 
+#openFormBtn{
+margin-left: 16px;
+}
 /*Modal Form*/
 .modal {
     display: none;
