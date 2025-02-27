@@ -1,5 +1,6 @@
 # 🐾 Clínica Veterinaria - Sistema de Gestión
 
+![Imágenes aplicacion](./src/img/table.png)
 Un sistema CRUD para la gestión de pacientes de una clínica veterinaria que permite consultar, crear, actualizar y eliminar registros de mascotas.
 
 ---
@@ -54,7 +55,8 @@ El proyecto utiliza un sistema mixto de almacenamiento:
 
 ## 📷 Capturas de pantalla
 
-[Imágenes de la aplicación - pendiente]
+![Imágenes aplicacion](./src/img/login.png)
+![Imágenes aplicacion](/src/img/search.png)
 
 ---
 
