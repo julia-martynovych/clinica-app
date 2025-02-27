@@ -48,7 +48,7 @@ El proyecto utiliza un sistema mixto de almacenamiento:
 
 ## 🚀 Demo
 
-[Enlace a la demo del proyecto - pendiente]
+[[Enlace a la demo del proyecto](https://julia-martynovych.github.io/clinica-app/)]
 
 ---
 
@@ -72,7 +72,7 @@ El proyecto utiliza un sistema mixto de almacenamiento:
 1. **Clona este repositorio:**
 
 ```bash
-   git clone https://github.com/[tu-usuario]/clinica-veterinaria.git
+   git clone https://github.com/julia-martynovych/clinica-app.git
    ```
 
 2.**Instala las dependencias:**
