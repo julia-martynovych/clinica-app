@@ -435,7 +435,7 @@ select {
 }
 
 /* Tablet and Desktop */
-@media (min-width: 651px) {
+@media (min-width: 651px) and (max-width: 1165px) {
     .table-container {
         max-width: 800px;
         margin: 0 auto;
