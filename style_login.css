@@ -1,11 +1,16 @@
 :root {
     --yellow-color-light: #F8CE51;
     --yellow-color-dark: #D3AC37;
-    --yellow-color-hover: #F8E4AC;
+    --yellow-color-hover:#F8E4AC;
     --main-color-black: #34393C;
     --color-placeholders: #E5EFEE;
+    --color-error-message:red;
+    --color-dog: #40C9A2;
+    --color-cat: #2F9C95;
     --color-white: #FFFFFF;
     --font-size-h1: 64px;
+    --font-size-h1-mobile: 40px;
+    --font-size-h1-tablet: 48px;
     --font-size-p: 16px;
     --font-family-h1: "Irish Grover";
     --font-family-p: "Jost";
@@ -21,7 +26,7 @@ body {
     font-family: var(--font-family-p);
 }
 
-/* Header / Nav */
+/* Nav */
 .login--container {
     margin-top: 24px;
     display: flex;
@@ -77,7 +82,7 @@ p {
     margin: 3rem auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--color-box-shadow);
     background-color: var(--color-white);
 }
 
@@ -123,7 +128,7 @@ p {
 }
 
 .error-message {
-    color: #e74c3c;
+    color: var(--color-error-message);
     font-size: 14px;
     margin-top: 5px;
     font-family: var(--font-family-p);
@@ -176,6 +181,12 @@ button:hover {
     box-shadow: 0 6px 12px rgba(87, 87, 86, 0.2);
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 /* Estilos para los modales */
 .modal, .cookie-modal {
     display: none;
@@ -194,12 +205,12 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    max-width: 400px;
     position: relative;
 }
 
 .cookie-content {
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .close {
@@ -275,23 +286,104 @@ button:hover {
     margin-bottom: 20px;
     text-align: center;
 }
+button{
+    max-width: 50%;
+}
 
-/* Media queries para responsividad */
-@media (max-width: 768px) {
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    /* Ajustes para el navegador y logo */
+    h1 {
+        font-size: var(--font-size-h1-mobile);
+    }
+
+    .img--logo {
+        height: 80px;
+        width: auto;
+    }
+
+    .nav--title p {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    /* Ajustes para el layout del nav */
     .login--container {
+        flex-direction: column;
+        margin-top: 12px;
+    }
+
+    .login--box, .nav--title, .nav--login {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Ajustes para el formulario de login */
+    .login-container {
+        max-width: 50%;
+        margin: 2rem auto;
+        padding: 15px;
+    }
+
+    .input-group input {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .remember-me label {
+        font-size: 16px;
+    }
+
+   
+    /* Ajustes para los botones */
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* width: 100%; */
+    }
+    .button--yellow-light, .button--yellow-stroke {
+        height: 35px;
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100px;
+
+    }
+
+    /* Ajustes para los modales */
+    .modal-content, .cookie-content {
+        margin: 20% auto;
+        padding: 15px;
+        max-width: 80%;
+    }
+
+    /* Ajustes para el aviso de cookies */
+    .cookie-buttons {
         flex-direction: column;
     }
     
-    .login--box, .nav--title {
+    .cookie-buttons button {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     
+    #login--question {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños */
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: calc(var(--font-size-h1) * 0.7);
+        font-size: 30px;
     }
     
     .img--logo {
-        height: 100px;
+        height: 80px;
+    }
+    
+    .login-container {
+        padding: 10px;
     }
 }
