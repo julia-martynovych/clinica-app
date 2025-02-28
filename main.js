@@ -246,10 +246,7 @@ async function updateLastVisitDate(petId, event) {
     }
 }
 
-// Cerrar modal al hacer clic en la X
-document.querySelector(".close").addEventListener("click", function() {
-    registerModal.style.display = "none";
-});
+
 
 // Close form when clicking outside
 document.addEventListener("click", function (event) {
