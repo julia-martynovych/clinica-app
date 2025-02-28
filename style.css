@@ -67,7 +67,7 @@
 
 #logout-button {
     margin-top: 16px;
-    width: 130px;
+    width: 150px;
 }
 
 h1 {
@@ -199,7 +199,7 @@ input {
 
 #searchButton {
     align-self: center;
-    width: 130px;
+    width: 150px;
 }
 
 .input-field,
@@ -263,13 +263,13 @@ select {
 
 #openFormBtn {
     margin-left: 16px;
-    width: 130px;
+    width: 150px;
     height: 30px;
     margin-bottom: 100px;
 }
 
 #loadAllBtn{
-    width: 130px;
+    width: 150px;
     height: 30px;
     margin-bottom: 100px;
 }
