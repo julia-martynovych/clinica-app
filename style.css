@@ -130,6 +130,8 @@ button:hover {
 
 button {
     cursor: url('./src/img/cursor.svg'), auto;
+    width: 150px;
+    height: 30px;
 }
 
 /*Search Form*/
@@ -199,7 +201,6 @@ input {
 
 #searchButton {
     align-self: center;
-    width: 150px;
 }
 
 .input-field,
@@ -263,14 +264,10 @@ select {
 
 #openFormBtn {
     margin-left: 16px;
-    width: 150px;
-    height: 30px;
     margin-bottom: 100px;
 }
 
 #loadAllBtn{
-    width: 150px;
-    height: 30px;
     margin-bottom: 100px;
 }
 

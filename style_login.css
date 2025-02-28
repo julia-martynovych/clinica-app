@@ -260,10 +260,15 @@ button:hover {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    
 }
 
 .cookie-buttons button {
-    width: auto;
+    width: 150px;
+    height: 30px;
+}
+#reject-cookies {
+    margin-right: 36px;
 }
 
 /* Estilos adicionales */
@@ -292,7 +297,8 @@ button:hover {
     text-align: center;
 }
 button{
-    max-width: 50%;
+    width: 150px;
+    height: 30px;
 }
 
 /* Media Queries para dispositivos móviles */
@@ -366,13 +372,19 @@ button{
     /* Ajustes para el aviso de cookies */
     .cookie-buttons {
         flex-direction: column;
+        align-items: center;
     }
     
     .cookie-buttons button {
-        width: 100%;
+        width: 150px;
+        height: 30px;
         margin-bottom: 5px;
     }
     
+        #reject-cookies {
+            margin-right: 0;
+        }
+
     #login--question {
         font-size: 16px;
     }
